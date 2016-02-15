@@ -1,9 +1,6 @@
 #ifndef TURINGMACHINE_H
 #define TURINGMACHINE_H
 
-class Table;
-class Tape;
-
 #include "Table.h"
 #include "Tape.h"
 
