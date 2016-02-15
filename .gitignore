@@ -1,3 +1,4 @@
 *.dev
 *.exe
 *.o
+*.layout
