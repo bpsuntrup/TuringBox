@@ -23,8 +23,14 @@ public:
   // Change the symbol at the stylus
   void setValue(int symbol) { this.tape[this.stylus] = symbol; }
 
-  //
-  int * getTape
+  // Move stylus commands. These also must ensure that there is tape to the left
+  // to move towards, and that the tape is initialized (with 0) as it moves to 
+  // the right
+  void moveStylusRight();
+  void moveStylusLeft();
+
+  // Get an array of symbols (ints) twixt (inclusive) x and y on the tape
+  int * getTape(int x, int y);
 };
 
 #endif
