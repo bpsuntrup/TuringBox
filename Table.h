@@ -3,6 +3,8 @@
 
 #include <vector>
 
+using namespace std;
+
 struct machineState_t
 {
   int state;
@@ -25,7 +27,8 @@ struct machineInstruction_t
 
 class Table
 {
-  vector<machineInstruction_t> table;
+  // TODO: change the 4
+  vector<machineInstruction_t> table (4);
 
 public:
   // insert 5-tuple Turing machine instruction, returning an instruction ID

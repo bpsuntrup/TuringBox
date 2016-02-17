@@ -2,6 +2,7 @@
 #define TAPE_H
 
 #include <vector>
+using namespace std;
 
 // This class is going to hold the symbols. It has simple get and set methods,
 // as well as a "stylus" that will logically be the mounting point for the
