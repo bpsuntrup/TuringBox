@@ -1,7 +1,7 @@
 #ifndef TABLE_H
 #define TABLE_H
 
-#include <vector>
+#include <list>
 
 using namespace std;
 
@@ -28,7 +28,7 @@ struct machineInstruction_t
 class Table
 {
   // TODO: change the 4
-  vector<machineInstruction_t> table (4);
+  list<machineInstruction_t> table;
 
 public:
   // insert 5-tuple Turing machine instruction, returning an instruction ID
