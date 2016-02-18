@@ -1,4 +1,5 @@
 #include "TuringMachine.h"
+#include "Table.h"
 
 //  void insertInstruction();
 //  void removeInstruction();
@@ -8,6 +9,7 @@
 TuringMachine::TuringMachine()
 {
   this.table = new Table();
+  this.halt = 0;  // halt should be false by default
 }
 
 int TuringMachine::insertInstruction(int state, int symbol, int newState,

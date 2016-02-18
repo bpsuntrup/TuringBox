@@ -3,6 +3,7 @@
 
 #include "Table.h"
 #include "Tape.h"
+// TODO: look up forward declaring and see if it applies
 
 class TuringMachine 
 {

@@ -2,6 +2,7 @@
 #define TAPE_H
 
 #include <vector>
+#include "constants.h"
 using namespace std;
 
 // This class is going to hold the symbols. It has simple get and set methods,
@@ -11,7 +12,7 @@ using namespace std;
 
 class Tape 
 {
-  vector<int> tape (TM_TAPE_WIDTH);
+  vector<int> tape;
   int stylus;
 
 public:
@@ -19,10 +20,10 @@ public:
   Tape();
   
   // returns the value at the stylus
-  int getValue() { return this.tape[this.stylus]; }
+  int getValue();
 
   // Change the symbol at the stylus
-  void setValue(int symbol) { this.tape[this.stylus] = symbol; }
+  void setValue(int symbol);
 
   // Move stylus commands. These also must ensure that there is tape to the left
   // to move towards, and that the tape is initialized (with 0) as it moves to 
