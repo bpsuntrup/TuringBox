@@ -26,4 +26,6 @@ int Table::insertInstruction(int state, int symbol, int newState, int newSymbol,
   mInst.id = 0;  // TODO: figure out something to do with ID's or remove them
 
   this.table.push_back(mInst);
+
+  return 0;  //TODO: Figure out something to do with id's
 }
