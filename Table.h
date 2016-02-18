@@ -34,7 +34,7 @@ public:
   // insert 5-tuple Turing machine instruction, returning an instruction ID
   int insertInstruction(int state, int symbol, int newState, int newSymbol, 
                         char instruction);
-  void removeInstruction(int id);
+  // void removeInstruction(int id);
   machineAction_t getAction(int state, int symbol);
 };
 

@@ -29,3 +29,18 @@ int Table::insertInstruction(int state, int symbol, int newState, int newSymbol,
 
   return 0;  //TODO: Figure out something to do with id's
 }
+
+machineAction_t Table::getAction(int state, int symbol)
+{
+  for (list<machineInstruction_t>::iterator it=this.table.begin(); 
+       it != mylist.end(); 
+       ++it)
+    {
+      if ((*it).state.state == state && (*it).state.symbol ==symbol)
+        return (*it);
+    }
+     
+    // TODO: create custom exception, and declare in the function what kind
+    //       of exception this method throws.
+    throw "Sorry, bud; The table doesn't have an entry for that.";
+}
