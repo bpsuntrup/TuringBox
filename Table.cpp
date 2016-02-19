@@ -25,19 +25,19 @@ int Table::insertInstruction(int state, int symbol, int newState, int newSymbol,
   mInst.action = mAct;
   mInst.id = 0;  // TODO: figure out something to do with ID's or remove them
 
-  this.table.push_back(mInst);
+  this->table.push_back(mInst);
 
   return 0;  //TODO: Figure out something to do with id's
 }
 
 machineAction_t Table::getAction(int state, int symbol)
 {
-  for (list<machineInstruction_t>::iterator it=this.table.begin(); 
-       it != mylist.end(); 
+  for (list<machineInstruction_t>::iterator it=this->table.begin(); 
+       it != this->table.end(); 
        ++it)
     {
       if ((*it).state.state == state && (*it).state.symbol ==symbol)
-        return (*it);
+        return (*it).action;
     }
      
     // TODO: create custom exception, and declare in the function what kind
@@ -47,5 +47,6 @@ machineAction_t Table::getAction(int state, int symbol)
 
 Table Table::operator=(Table rhs)
 {
-  return this.table = rhs.table;
+  this->table = rhs.table;
+  return (*this);
 }
