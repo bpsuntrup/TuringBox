@@ -44,3 +44,8 @@ machineAction_t Table::getAction(int state, int symbol)
     //       of exception this method throws.
     throw "Sorry, bud; The table doesn't have an entry for that.";
 }
+
+Table Table::operator=(Table rhs)
+{
+  return this.table = rhs.table;
+}

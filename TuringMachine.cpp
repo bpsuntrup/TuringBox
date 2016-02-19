@@ -8,8 +8,8 @@
 
 TuringMachine::TuringMachine()
 {
-  this.table = new Table();
-  this.halt = 0;  // halt should be false by default
+  table = new Table();
+  halt = 0;  // halt should be false by default
 }
 
 int TuringMachine::insertInstruction(int state, int symbol, int newState,

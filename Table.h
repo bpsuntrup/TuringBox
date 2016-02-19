@@ -36,6 +36,7 @@ public:
                         char instruction);
   // void removeInstruction(int id);
   machineAction_t getAction(int state, int symbol);
+  Table operator=(Table rhs);
 };
 
 #endif
