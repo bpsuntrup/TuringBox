@@ -1,16 +1,36 @@
 #include "Tape.h"
+#include "constants.h"
 
-Tape::Tape(list<int>){}
 Tape::Tape() 
 {
-  // TODO: get back to tape and figure out what to do. Probably a list would
-  //       be better.
+  this->tape.push_back(BLANK_SYMBOL);
+  this->stylus = tape.begin();
 }
 
-// int Tape::getValue() { return this.tape[this.stylus]; }
-// void Tape::setValue(int symbol) { this.tape[this.stylus] = symbol; }
+int Tape::getValue() 
+{
+  return *(this->stylus);
+}
 
-void Tape::moveStylusRight() {}
-void Tape::moveStylusLeft() {}
-int * Tape::getTape(int x, int y) {}
+void Tape::setValue(int symbol)
+{
+  *(this->stylus) = symbol;
+}
+
+void Tape::moveStylusRight()
+{
+  if (this->stylus == this->tape.end())
+    this->tape.push_back(BLANK_SYMBOL);
+  (this->stylus)++;
+}
+
+void Tape::moveStylusLeft()
+{
+  if (this->stylus == this->tape.begin())
+    this->tape.push_front(BLANK_SYMBOL);
+  (this->stylus)--;
+}
+
+int * Tape::getTape(int x, int y)
+{}
 

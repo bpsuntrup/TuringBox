@@ -1,7 +1,7 @@
 #ifndef TAPE_H
 #define TAPE_H
 
-#include <vector>
+#include <list>
 #include "constants.h"
 using namespace std;
 
@@ -13,10 +13,9 @@ using namespace std;
 class Tape 
 {
   list<int> tape;
-  int stylus;
+  list<int>::iterator stylus;
 
 public:
-  Tape(vector<int>);
   Tape();
   
   // returns the value at the stylus
