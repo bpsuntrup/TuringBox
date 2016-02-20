@@ -12,7 +12,7 @@ using namespace std;
 
 class Tape 
 {
-  vector<int> tape;
+  list<int> tape;
   int stylus;
 
 public:
