@@ -7,6 +7,15 @@ Tape::Tape()
   this->stylus = tape.begin();
 }
 
+Tape::Tape(int* symbols, int size, int position)
+{
+  for (int i = 0; i < size; i++)
+  {
+    this->tape.push_back(symbols[i]);
+    if (i == position) this->stylus = tape.end();
+  }
+}
+
 int Tape::getValue() 
 {
   return *(this->stylus);

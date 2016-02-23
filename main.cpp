@@ -95,5 +95,12 @@ using namespace std;
 
 int main ()
 {
-TuringMachine machine;
+  int init [4] = {1,0,0,1};
+  int * p = init;
+  Tape tape(init, 4, 0);
+  // TODO: This should print out 1, but it doesn't.
+  cout << tape.getValue() <<endl;
+  cout << p[0];
+
+  TuringMachine machine;
 }
