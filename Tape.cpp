@@ -12,7 +12,11 @@ Tape::Tape(int* symbols, int size, int position)
   for (int i = 0; i < size; i++)
   {
     this->tape.push_back(symbols[i]);
-    if (i == position) this->stylus = tape.end();
+    if (i == position)
+    {
+      this->stylus = tape.end();
+      (this->stylus)--;  // end() returns the "past the end" object in the list
+    }
   }
 }
 
