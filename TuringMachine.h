@@ -16,6 +16,8 @@ public:
   // insert 5-tuple Turing machine instruction, returning an instruction ID
   int insertInstruction(int state, int symbol, int newState, int newSymbol, 
                         char instruction);
+  int setState(int state) { this->state = state; }
+
   // void removeInstruction(int id);
   void run(Tape*);
   TuringMachine();

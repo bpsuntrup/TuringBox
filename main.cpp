@@ -97,10 +97,15 @@ int main ()
 {
   int init [4] = {1,0,0,1};
   int * p = init;
-  Tape tape(init, 4, 0);
-  // TODO: This should print out 1, but it doesn't.
+  Tape tape(init, 4);
   cout << tape.getValue() <<endl;
-  cout << p[0];
+  cout << p[0] << endl;
 
   TuringMachine machine;
+  machine.setState(0);
+  machine.insertInstruction(0,1,1,1,'r');
+  machine.insertInstruction(1,0,1,0,'r');
+  machine.insertInstruction(1,1,2,0,'h');
+  machine.run(&tape);
+  cout << tape.getValue() << endl;  // should print 0
 }
