@@ -28,7 +28,7 @@ public:
   //
   // post: The tape will be initialized with the values in the array with the
   //       stylus pointing to the value specified by the "position" index.
-  Tape(int* symbols, int size, int position);
+  Tape(int* symbols, int size, int position=0);
   
   // returns the value at the stylus
   int getValue();
