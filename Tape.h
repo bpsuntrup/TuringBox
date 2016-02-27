@@ -42,8 +42,11 @@ public:
   void moveStylusRight();
   void moveStylusLeft();
 
-  // Get an array of symbols (ints) twixt (inclusive) x and y on the tape
-  int * getTape(int x, int y);
+  // Returns an array of integers corresponding to the tape 
+  int * getTape();
+
+  // Return current size of tape list
+  int getTapeSize() { return tape.size(); }
 };
 
 #endif

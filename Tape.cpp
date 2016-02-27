@@ -1,5 +1,7 @@
 #include "Tape.h"
 #include "constants.h"
+#include <iostream>
+using namespace std;
 
 Tape::Tape() 
 {
@@ -44,6 +46,24 @@ void Tape::moveStylusLeft()
   (this->stylus)--;
 }
 
-int * Tape::getTape(int x, int y)
-{}
+// Returns a pointer to an array in the heap. Need to clearly document that the
+// array needs to be "delete"ed to avoid memory leaks.... or figure out a
+// different model.
+int * Tape::getTape()
+{
+  int * array = new int[this->getTapeSize()];
+  int j = 0;
+
+  for (list<int>::iterator i = this->tape.begin();
+       i != this->tape.end();
+       i++)
+  {
+    cout << "j = " << j << endl;
+    cout << "*i = " << *i << endl;
+    array[j] = *i;
+    j++;
+  }
+
+  return array;
+}
 
