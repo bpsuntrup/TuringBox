@@ -49,7 +49,7 @@ void Tape::moveStylusLeft()
 
 // Returns a pointer to an array in the heap. Need to clearly document that the
 // array needs to be "delete"ed to avoid memory leaks.... or figure out a
-// different model.
+// different model
 int * Tape::getTape()
 {
   int * array = new int[this->getTapeSize()];
@@ -59,8 +59,6 @@ int * Tape::getTape()
        i != this->tape.end();
        i++)
   {
-    cout << "j = " << j << endl;
-    cout << "*i = " << *i << endl;
     array[j] = *i;
     j++;
   }
