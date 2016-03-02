@@ -3,10 +3,11 @@
 #include <iostream>
 using namespace std;
 
-Tape::Tape() 
+Tape::Tape(int blankSymbol = 0) 
 {
-  this->tape.push_back(BLANK_SYMBOL);
+  this->tape.push_back(this->blankSymbol);
   this->stylus = tape.begin();
+  this->blankSymbol = blankSymbol;
 }
 
 Tape::Tape(int* symbols, int size, int position)
@@ -35,14 +36,14 @@ void Tape::setValue(int symbol)
 void Tape::moveStylusRight()
 {
   if (this->stylus == this->tape.end())
-    this->tape.push_back(BLANK_SYMBOL);
+    this->tape.push_back(this->blankSymbol);
   (this->stylus)++;
 }
 
 void Tape::moveStylusLeft()
 {
   if (this->stylus == this->tape.begin())
-    this->tape.push_front(BLANK_SYMBOL);
+    this->tape.push_front(this->blankSymbol);
   (this->stylus)--;
 }
 

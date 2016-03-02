@@ -14,9 +14,10 @@ class Tape
 {
   list<int> tape;
   list<int>::iterator stylus;
+  int blankSymbol;
 
 public:
-  Tape();
+  Tape(int);
 
   // takes an array of integers, the size of the array, and a desired beginning
   // position for the stylus, and creates an initialized tape.
