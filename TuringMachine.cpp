@@ -1,10 +1,6 @@
 #include "TuringMachine.h"
 #include "Table.h"
 
-//  void insertInstruction();
-//  void removeInstruction();
-//  void run(Tape*);
-//  TuringMachine();
 
 TuringMachine::TuringMachine()
 {
@@ -25,8 +21,8 @@ void TuringMachine::run(Tape* tape)
   while(!(this->halt))
   {
     // get the table instruction
-    machineAction_t action = this->table->getAction(this->state,
-                                                    tape->getValue());
+    MachineAction action = this->table->getAction(this->state,
+                                                  tape->getValue());
 
     // Order: Change the symbol on the tape first, then change state, then move
     //        or halt.

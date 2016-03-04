@@ -31,7 +31,7 @@ class TuringMachine
 {
   int state;
   int halt;
-  Table* table;
+  Table *table;
 
 public:
 

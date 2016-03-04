@@ -5,37 +5,37 @@
 
 using namespace std;
 
-struct machineState_t
+struct MachineStatus
 {
   int state;
   int symbol;
 };
 
-struct machineAction_t
+struct MachineAction
 {
   int newState;
   int newSymbol;
   char instruction;
 };
 
-struct machineInstruction_t
+struct MachineInstruction
 {
   int id;
-  machineState_t state;
-  machineAction_t action;
+  MachineStatus state;
+  MachineAction action;
 };
 
 class Table
 {
   // TODO: change the 4
-  list<machineInstruction_t> table;
+  list<MachineInstruction> table;
 
 public:
   // insert 5-tuple Turing machine instruction, returning an instruction ID
   int insertInstruction(int state, int symbol, int newState, int newSymbol, 
                         char instruction);
   // void removeInstruction(int id);
-  machineAction_t getAction(int state, int symbol);
+  MachineAction getAction(int state, int symbol);
   Table operator=(Table rhs);
 };
 
