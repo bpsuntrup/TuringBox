@@ -1,10 +1,12 @@
 TuringBox: main.o Tape.o TuringMachine.o Table.o
 	g++ -o TuringBox main.o Tape.o TuringMachine.o Table.o
-main.o: main.cpp
+main.o:
 	g++ -c main.cpp
-Tape.o: Tape.cpp
+Tape.o:
 	g++ -c Tape.cpp
-TuringMachine.o: TuringMachine.cpp
+TuringMachine.o: 
 	g++ -c TuringMachine.cpp
-Table.o: Table.cpp
+Table.o:
 	g++ -c Table.cpp
+clean:
+	rm *.o
