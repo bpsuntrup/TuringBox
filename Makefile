@@ -1,12 +1,13 @@
-TuringBox: main.o Tape.o TuringMachine.o Table.o
-	g++ -o TuringBox main.o Tape.o TuringMachine.o Table.o
+objects = main.o Tape.o TuringMachine.o Table.o
+TuringBox: $(objects)
+	g++ -o TuringBox build/main.o build/Tape.o build/TuringMachine.o build/Table.o -I include
 main.o:
-	g++ -c main.cpp
+	g++ -c src/main.cpp -o build/main.o -I include
 Tape.o:
-	g++ -c Tape.cpp
+	g++ -c src/Tape.cpp -o build/Tape.o -I include
 TuringMachine.o: 
-	g++ -c TuringMachine.cpp
+	g++ -c src/TuringMachine.cpp -o build/TuringMachine.o -I include
 Table.o:
-	g++ -c Table.cpp
+	g++ -c src/Table.cpp -o build/Table.o -I include
 clean:
-	rm *.o
+	rm build/*.o
