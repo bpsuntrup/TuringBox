@@ -4,3 +4,5 @@ already marked with a "TODO" tag in the code itself.
  - Document everything.
  - Make coding standards.
  - Write unit tests.
+ - Goodify Makefile
+ - Figure out how to make a configuration for compiling a shared library.
