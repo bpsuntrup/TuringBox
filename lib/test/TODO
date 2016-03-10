@@ -1,0 +1,8 @@
+In order to get tests up and running, I'll need a small framework. Below are
+things I'll need to do to have everything I need to test classes and stuff:
+
+ - TestBed class
+   - class that strings a bunch of TestCases together and runs them all
+ - TestCase class
+   - class that contains a bunch of test methods
+ - Exceptions to be thrown for failing tests
