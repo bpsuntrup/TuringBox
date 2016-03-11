@@ -31,6 +31,8 @@ class TestSuite
 public:
   void addTest(function<void()> test);
   void runTests();
+
+  static bool assert(bool);
   
 private:
   list<function<void()>> tests;

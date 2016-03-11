@@ -17,3 +17,15 @@ void TestSuite::runTests()
     (*it)();
   }
 }
+
+bool TestSuite::assert(bool expression)
+{
+  if (expression)
+  {
+    return expression;
+  }
+  else /* TODO: throw an error and then */
+  {
+    return expression;
+  }
+}
