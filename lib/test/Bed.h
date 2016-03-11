@@ -7,22 +7,22 @@
 // subset of tests. For now it just aggregates all of the tests into a single
 // test bed, and runs them all at once.
 //
-#ifndef TESTBED_H
-#define TESTBED_H
+#ifndef BED_H
+#define BED_H
 
-#include "TestSuite.h"
+#include "Suite.h"
 #include <list>
 
-
-
-class TestBed
+namespace Test
 {
-public:
-  void addTestSuite(TestSuite*);
-  void runAllTests();
+  class Bed
+  {
+  public:
+    void addSuite(Suite*);
+    void runAllTests();
 
-private:
-  static list<TestSuite*> suites_;
-};
-  
+  private:
+    static list<Suite*> suites_;
+  };
+}  
 #endif

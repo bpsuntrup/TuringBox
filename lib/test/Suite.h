@@ -7,8 +7,8 @@
 // @desc TestSuite is a class for defining test methods.
 //
 
-#ifndef TESTSUITE_H
-#define TESTSUITE_H
+#ifndef SUITE_H
+#define SUITE_H
 
 #include <functional>
 #include <iostream> 
@@ -20,22 +20,22 @@ using namespace std;
 // about.
 
 
-// Discussion: 
-//   I will need to have an array of function objects which can then all be
-//   called. I will need methods for adding function objects.
-//
-
-
-class TestSuite
+namespace Test
 {
-public:
-  void addTest(function<void()> test);
-  void runTests();
+  // basic assert for testing:
+  bool assert (bool);
 
-  static bool assert(bool);
+  class Suite
+  {
+  public:
+    void addTest(function<void()> test);
+    void runTests();
+
+    static bool assert(bool);
   
-private:
-  list<function<void()>> tests;
-};
+  private:
+    list<function<void()>> tests;
+  };
 
+} // end namespace Test
 #endif

@@ -1,14 +1,15 @@
-#include "TestSuite.h"
+#include "Suite.h"
 #include <list>
 #include <functional>
 #include <iostream>
+using namespace Test;
 
-void TestSuite::addTest(function<void()> test)
+void Suite::addTest(function<void()> test)
 {
   tests.push_back(test);
 }
 
-void TestSuite::runTests()
+void Suite::runTests()
 {
   for (list<function<void()>>::iterator it = tests.begin();
        it != tests.end();
@@ -18,7 +19,7 @@ void TestSuite::runTests()
   }
 }
 
-bool TestSuite::assert(bool expression)
+bool assert(bool expression)
 {
   if (expression)
   {
