@@ -18,6 +18,7 @@ namespace Test
   class Bed
   {
   public:
+    // TODO: Use references instead of pointers and see if they work "better".
     void addSuite(Suite*);
     void runAllTests();
 

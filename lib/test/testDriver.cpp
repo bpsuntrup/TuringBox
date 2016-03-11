@@ -14,6 +14,8 @@ void jack(){cout<<"jack"<<endl;}
 
 int main()
 {
+  // Test Suite
+  cout << "Just test out Suite:" << endl;
   Test::Suite t;
   function<void()> f;
   f = mary;
@@ -24,11 +26,15 @@ int main()
   t.addTest(f);
   t.addTest([](){ cout << "Anonymous" << endl; });
   t.runTests();
-//  f();
 
+  // Test Bed
+  cout << endl << "Now test Bed: " << endl;
   Test::Bed b;
   b.addSuite(&t);
 
-  cout <<"Running TestBed tests:" << endl;
+  Test::Suite s;
+  s.addTest([](){Test::assert(false);});
+  b.addSuite(&s);
+
   b.runAllTests();
 }
