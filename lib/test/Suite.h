@@ -34,8 +34,9 @@ namespace Test
     void addTest(string description, function<void()> test);
     void addTest(function<void()> test);
     void addTest(Case testCase);
-    void runTests();
-
+    bool runTests(ostream& o = cout);
+    void describe(string description);
+    string describe();
 
     static bool assert(bool expression, string description = "");
   

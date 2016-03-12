@@ -9,33 +9,39 @@
 #include <functional>
 using namespace std;
 
-void mary() { cout<< "mary"<<endl;}
-void joe() {cout<<"joe"<<endl;}
-void jack(){cout<<"jack"<<endl;}
 
 int main()
 {
-  // Test Suite
-  cout << "Just test out Suite:" << endl;
-  Test::Suite t;
-  function<void()> f;
-  f = mary;
-  t.addTest(f);
-  f = joe;
-  t.addTest(f);
-  f = jack;
-  t.addTest(f);
-  t.addTest([](){ cout << "Anonymous" << endl; });
-  t.runTests();
+  // UX overall:
+  cout << "Testing overall UX:" << endl;
 
-  // Test Bed
-  cout << endl << "Now test Bed: " << endl;
-  Test::Bed b;
-  b.addSuite(&t);
+  Test::Suite testBogus;
 
-  Test::Suite s;
-  s.addTest([](){Test::Suite::assert(false, "hi");});
-  b.addSuite(&s);
+  testBogus.describe("Testing Bogus");
 
-  b.runAllTests();
+  testBogus.addTest("Test Bogus::firstMethod", []()
+  {
+    Test::Suite::assert(true, "This Should be true");
+  });
+
+  testBogus.addTest("Test Bogus::badlyImplementedMethod", []()
+  {
+    Test::Suite::assert(false, "see if false is true");
+  });
+
+  testBogus.addTest("Test Bogus::thirdMethod", []()
+  {
+    Test::Suite::assert(true, "You shouldn't see this");
+  });
+
+  testBogus.runTests();
+
+  // Notes and TODO's: 
+  //  - I don't like that the assert() function lives in Suite. Change that.
+  //
+  //  - I think maybe assert() should be overloaded to be able to take the
+  //    description and the boolean in either order.
+  //  
+  //  - Test out what the UX would feel like for having multple Suites across
+  //    multiple files.
 }

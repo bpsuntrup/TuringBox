@@ -25,27 +25,47 @@ void Test::Suite::addTest(Test::Case testCase)
   tests_.push_back(testCase);
 }
 
-void Test::Suite::runTests()
+bool Test::Suite::runTests(ostream& o)
 {
+  // change this to false if any tests fail
+  bool didItPass = true;
   for (list<Case>::iterator it = tests_.begin();
        it != tests_.end();
        it++)
   {
-    (*it)();
+    try
+    {
+      o << it->describe() << ": ";
+      (*it)();
+    }
+    catch (string msg)
+    {
+      o << "FAIL" << endl;
+      o << "    Assert \"" << msg << "\" is false." << endl;
+      didItPass = false;  // no it didn't
+      continue;  // don't print PASS
+    }
+    
+    o << "PASS" << endl;
   }
+  
+  o << description_ << ": " << (didItPass ? "PASS" : "FAIL") << endl;
+}
+
+void Test::Suite::describe(string description)
+{
+  description_ = description;
+}
+
+string Test::Suite::describe()
+{
+  return description_;
 }
 
 bool Test::Suite::assert(bool expression, string description)
 {
   if (!expression)
   {
-    // TODO: Right now this will stop the program, but doesn't give very good
-    //       clues as to what went wrong. At least pass back some sort of 
-    //       stack trace.
-    //
-    // TODO: Make sure that a single failed test doesn't halt all the whole
-    //       test bed. This might require a little elbow grease in the 
-    //       runTests function after I've figured out the previous TO DO
     throw description;
   }
   return true;
