@@ -33,6 +33,9 @@ bool Test::Suite::runTests(ostream& o)
        it != tests_.end();
        it++)
   {
+    // Below is a try/catch loop. If a test fails, it will throw a string.
+    // Catch that string as "msg", and give some output to the user.
+    // Print PASS to the ostream if it passes, and FAIL if it fails.
     try
     {
       o << it->describe() << ": ";
@@ -47,8 +50,9 @@ bool Test::Suite::runTests(ostream& o)
     }
     
     o << "PASS" << endl;
-  }
+  } // end for loop
   
+  // Now print to the user whether the Suite as a whole passed or failed.
   o << description_ << ": " << (didItPass ? "PASS" : "FAIL") << endl;
 }
 
