@@ -4,6 +4,7 @@
 
 #include "Suite.h"
 #include "Bed.h"
+#include "Case.h"
 #include <iostream>
 #include <functional>
 using namespace std;
@@ -33,7 +34,7 @@ int main()
   b.addSuite(&t);
 
   Test::Suite s;
-  s.addTest([](){Test::assert(false);});
+  s.addTest([](){Test::Suite::assert(false, "hi");});
   b.addSuite(&s);
 
   b.runAllTests();
