@@ -1,0 +1,3 @@
+bin/libtest.a
+build/*.o
+Driver
