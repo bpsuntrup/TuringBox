@@ -38,8 +38,6 @@ namespace Test
     void describe(string description);
     string describe();
 
-    static bool assert(bool expression, string description = "");
-  
   private:
     list<Case> tests_;
     string description_;

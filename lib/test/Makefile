@@ -1,4 +1,4 @@
-objects = build/Suite.o build/Case.o build/Bed.o
+objects = build/Suite.o build/Case.o build/Bed.o build/Test.o
 CC = g++ -std=c++11
 
 bin/libtest.a: $(objects)
@@ -13,8 +13,10 @@ build/Suite.o: include/Suite.h include/Case.h src/Suite.cpp
 build/Bed.o: include/Bed.h include/Suite.h include/Case.h src/Bed.cpp
 	$(CC) -c -o build/Bed.o src/Bed.cpp -I include
 
-Driver: bin/libtest.a src/testDriver.cpp include/Bed.h include/Suite.h \
-        include/Case.h
+build/Test.o: src/Test.cpp include/Test.h
+	$(CC) -c -o build/Test.o src/Test.cpp -I include
+
+Driver: bin/libtest.a 
 	$(CC) src/testDriver.cpp bin/libtest.a -o Driver -I include
 
 .PHONY: clean

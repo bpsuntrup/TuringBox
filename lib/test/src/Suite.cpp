@@ -65,12 +65,3 @@ string Test::Suite::describe()
 {
   return description_;
 }
-
-bool Test::Suite::assert(bool expression, string description)
-{
-  if (!expression)
-  {
-    throw description;
-  }
-  return true;
-}
