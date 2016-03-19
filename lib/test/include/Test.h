@@ -1,6 +1,9 @@
 #ifndef TEST_H
 #define TEST_H
 
+#include "Case.h"
+#include "Suite.h"
+#include "Bed.h"
 #include <string>
 using namespace std;
 
