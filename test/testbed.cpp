@@ -1,6 +1,3 @@
-#include "Case.h"
-#include "Suite.h"
-#include "Bed.h"
 #include "Table.h"
 #include "Test.h"
 
@@ -18,7 +15,7 @@ int main()
     MachineAction m = t.getAction(1,2);
     // TODO: for some reason I get an undefined reference error when trying to
     //       use the assert method. That sucks. Fix it.
-    //Test::assert(m.newState == 3, "see if state can be retrieved");
+    Test::assert(m.newState == 3, "see if state can be retrieved");
   });
   testbed.addSuite(&testTable); // TODO: use a reference instead
 

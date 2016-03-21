@@ -9,7 +9,7 @@ using namespace std;
 
 namespace Test
 {
-  static bool assert(bool expression, string description = "");
+  bool assert(bool expression, string description = "");
 }
 
 #endif
