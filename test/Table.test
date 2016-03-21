@@ -1,0 +1,17 @@
+// Test Table
+Test::Suite testTable;
+
+testTable.describe("Testing Table");
+
+testTable.addTest("Test Table::insertInstruction", []()
+{
+  Table t;
+  t.insertInstruction(1,2,3,4,'d');
+  MachineAction m = t.getAction(1,2);
+  Test::assert(m.newState == 3, "see if state can be retrieved");
+  Test::assert(m.newSymbol == 4, "see if new symbol can be retrieved");
+  Test::assert(m.instruction == 'd', "see if new instruction can be \
+                                      retrieved");
+});
+
+testbed.addSuite(&testTable); // TODO: use a reference instead

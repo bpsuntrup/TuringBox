@@ -20,8 +20,10 @@ lib/test/bin/libtest.a:
 	make
 	cd ../..
 
-tests: test/testbed.cpp bin/libturing.a lib/test/bin/libtest.a
-	g++ -std=c++11 -I include -I lib/test/include -L bin -L lib/test/bin -static test/testbed.cpp -lturing -ltest -o tests
+run_tests: test/testbed.cpp bin/libturing.a lib/test/bin/libtest.a
+	g++ -std=c++11 -I test 	-I include -I lib/test/include -L bin -L lib/test/bin -static test/testbed.cpp -lturing -ltest -o run_tests
+
+tests: run_tests
 	
 clean:
 	rm build/*.o
