@@ -9,7 +9,7 @@ Running `make driver` will output a small driver executable that demonstrates
 
 # Running Unit Tests
 To compile the unit tests, run `make tests`. This outputs an executable
-called `tests`. Have fun. If the word `FAIL` appears, they failed. Otherwise,
+called `run_tests`. Have fun. If the word `FAIL` appears, they failed. Otherwise,
 they passed.
 
 # Version

@@ -16,11 +16,9 @@ build/Bed.o: include/Bed.h include/Suite.h include/Case.h src/Bed.cpp
 build/Test.o: src/Test.cpp include/Test.h
 	$(CC) -c -o build/Test.o src/Test.cpp -I include
 
-Driver: bin/libtest.a 
+driver: bin/libtest.a 
 	$(CC) src/testDriver.cpp bin/libtest.a -o Driver -I include
 
 .PHONY: clean
 clean:
-	-rm bin/libtest.a
-	-rm Driver
-	-rm $(objects)
+	-rm -f bin/libtest.a driver $(objects)

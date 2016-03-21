@@ -16,9 +16,7 @@ build/Table.o:
 # TODO: figure out how to easily include all of the dependencies for this
 #       library:
 lib/test/bin/libtest.a:
-	cd lib/test
-	make
-	cd ../..
+	cd lib/test; make
 
 run_tests: test/testbed.cpp bin/libturing.a lib/test/bin/libtest.a
 	g++ -std=c++11 -I test 	-I include -I lib/test/include -L bin -L lib/test/bin -static test/testbed.cpp -lturing -ltest -o run_tests
@@ -26,4 +24,5 @@ run_tests: test/testbed.cpp bin/libturing.a lib/test/bin/libtest.a
 tests: run_tests
 	
 clean:
-	rm build/*.o
+	-rm driver run_tests $(objects)
+	cd lib/test; make clean
