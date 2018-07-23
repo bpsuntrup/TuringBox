@@ -1,24 +1,12 @@
-# TuringBox (WIP)
-A turing machine emulator library.
+# TuringBox
 
-# Building
-Run `make`. This should output a library in bin/ called "libturing.a".
+A "box" of turing machine programs. I like turing machines. I've always wanted
+to write a turing machine program in C++, so I have a started ('failed') C++
+Turing machine... I hate C++.
 
-Running `make driver` will output a small driver executable that demonstrates
-(mostly for the developer) the functionality of the library.
+I have a couple of good python versions of Turing machine to satisfy my 
+itch/boredom. Someday, I think it would be cool to equip them with advanced 
+features like multi-threading, networking/etc. *Note:* that would be a bad
+idea.
 
-# Running Unit Tests
-To compile the unit tests, run `make tests`. This outputs an executable
-called `run_tests`. Have fun. If the word `FAIL` appears, they failed. Otherwise,
-they passed.
-
-Note that the many of the test files have a `.test` filename extension. This 
-may have been a silly decision, but you can add something like
-`au BufRead,BufNewFile *.test	setf cpp` to your .vimrc to get the C++ color
-scheme you love.
-
-# Version
-0.0
-
-# License
-MIT (C) Benjamin Paul Suntrup. See COPYING.
+MIT License.
